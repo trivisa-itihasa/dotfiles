@@ -36,7 +36,7 @@ link_to_homedir() {
           if [[ -e "$target" ]]; then
             command mv "$target" "$HOME/.dotbackup/.config"
           fi
-          command ln -snf "$config_f" "$HOME/.confing/"
+          command ln -snf "$config_f" "$HOME/.config/"
         done
         continue
       fi
