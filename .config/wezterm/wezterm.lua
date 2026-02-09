@@ -9,7 +9,7 @@ return {
 	line_height = 1.0,
 	color_scheme = "iceberg-dark",
 	font = wezterm.font_with_fallback({
-		{ family = "MonoLisa Nerd Font", weight = "Medium" },
+		{ family = "MonoLisa Nerd Font", weight = "Regular" },
 		{ family = "IBM Plex Sans JP", weight = "Medium" },
 	}),
 	use_fancy_tab_bar = false,
