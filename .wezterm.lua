@@ -10,7 +10,7 @@ return {
 	color_scheme = "iceberg-dark",
 	font = wezterm.font_with_fallback({
 		{ family = "MonoLisa Nerd Font", weight = "Regular" },
-		{ family = "IBM Plex Sans JP", weight = "Medium" },
+		{ family = "IBM Plex Sans JP", weight = "Regular" },
 	}),
 	use_fancy_tab_bar = false,
 	hide_tab_bar_if_only_one_tab = true,
