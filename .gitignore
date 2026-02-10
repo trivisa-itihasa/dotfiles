@@ -1,12 +1,13 @@
 # Ignore all files
-/*
-/.**
+*
+!*/
 
-# Whitelist files
-!/README.md
-!/.gitconfig
-!/.gitignore
-!/.wezterm.lua
-!/.zshrc
-!/.config/nvim
-!/.config/starship.toml
+# Whitelisted files
+!.git/*
+!.gitconfig
+!.gitignore
+!README.md
+!.wezterm.lua
+!.zshrc
+!.config/nvim/*
+!.config/starship.toml
