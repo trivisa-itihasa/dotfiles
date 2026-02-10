@@ -7,7 +7,7 @@ return {
     config = function()
       require("monokai-pro").setup({
         filter = "pro",
-        transparent_background = false,
+        transparent_background = true,
       })
     end,
   },
