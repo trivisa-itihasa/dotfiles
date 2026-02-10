@@ -3,6 +3,7 @@
 /.**
 
 # Whitelist files
+!/README.md
 !/.gitconfig
 !/.gitignore
 !/.wezterm.lua
