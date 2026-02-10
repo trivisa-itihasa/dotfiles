@@ -1,2 +1,11 @@
-.DS_Store/
-.git/
+# Ignore all files
+/*
+/.**
+
+# Whitelist files
+!/.gitconfig
+!/.gitignore
+!/.wezterm.lua
+!/.zshrc
+!/.config/nvim
+!/.config/starship.toml
