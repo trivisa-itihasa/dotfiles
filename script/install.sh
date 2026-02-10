@@ -21,6 +21,7 @@ link_to_homedir() {
     for f in $dotdir/.??*; do
       local filename=$(basename "$f")
       [[ "$filename" == ".git" ]] && continue
+      [[ "$filename" == ".gitignore" ]] && continue
       [[ "$filename" == ".DS_Store" ]] && continue
 
       if [[ "$filename" == ".config" ]]; then

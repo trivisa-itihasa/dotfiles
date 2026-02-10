@@ -105,4 +105,5 @@ return {
 
 		{ key = "Enter", mods = "ALT", action = "DisableDefaultAssignment" },
 	},
+	default_prog = { "/bin/zsh" },
 }
