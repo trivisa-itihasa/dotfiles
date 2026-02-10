@@ -4,3 +4,4 @@
 - Wezterm
 - git
 - Starship
+- zsh
