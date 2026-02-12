@@ -9,5 +9,5 @@
 !README.md
 !.wezterm.lua
 !.zshrc
-!.config/nvim/*
+!.config/nvim/**
 !.config/starship.toml
