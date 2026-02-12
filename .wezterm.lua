@@ -4,7 +4,7 @@ local act = wezterm.action
 -- 設定ビルダーを作成（エラーハンドリング等が向上するため推奨）
 local config = {}
 if wezterm.config_builder then
-  config = wezterm.config_builder()
+	config = wezterm.config_builder()
 end
 
 -- ============================================================
@@ -15,27 +15,26 @@ local is_windows = target:find("windows") ~= nil
 local is_mac = target:find("apple") ~= nil
 
 if is_windows then
-  -- 【Windows設定】
-  -- WSLのUbuntuをデフォルトで起動 (ディストリビューション名は適宜 "WSL:Debian" などに変更してください)
-  config.default_domain = 'WSL:Ubuntu-24.04'
+	-- 【Windows設定】
+	config.default_domain = "WSL:Ubuntu-24.04"
+	config.win32_system_backdrop = "Acrylic"
 
-  -- Windowsはフォント描画が異なるため、サイズを微調整しても良い
-  config.font_size = 12.0
-
-  -- Windowsでは /bin/zsh は存在しないため default_prog は設定しない（default_domainに任せる）
+	-- Windowsはフォント描画が異なるため、サイズを微調整しても良い
+	config.font_size = 12.0
 elseif is_mac then
-  -- 【Mac設定】
-  config.font_size = 12.0
-  -- ログインシェルとして起動
-  config.default_prog = { "/bin/zsh", "-l" }
+	-- 【Mac設定】
+	config.font_size = 12.0
+	config.default_prog = { "/bin/zsh", "-l" }
+	config.macos_window_background_blur = 20
 
-  -- Mac特有のキーバインディング（OptionキーをMetaとして扱うなど）が必要ならここへ
-  config.send_composed_key_when_left_alt_is_pressed = true
-  config.send_composed_key_when_right_alt_is_pressed = true
+	-- Mac特有のキーバインディング（OptionキーをMetaとして扱うなど）が必要ならここへ
+	config.send_composed_key_when_left_alt_is_pressed = true
+	config.send_composed_key_when_right_alt_is_pressed = true
 else
-  -- 【Linux設定】
-  config.font_size = 12.0
-  config.default_prog = { "/bin/zsh" }
+	-- 【Linux設定】
+	config.font_size = 12.0
+	config.default_prog = { "/bin/zsh" }
+	config.kde_window_background_blur = true
 end
 
 -- ============================================================
@@ -49,24 +48,24 @@ config.line_height = 1.0
 config.color_scheme = "iceberg-dark"
 
 config.font = wezterm.font_with_fallback({
-  { family = "MonoLisa Nerd Font", weight = "Regular" },
-  { family = "IBM Plex Sans JP",   weight = "Regular" },
+	{ family = "MonoLisa Nerd Font", weight = "Regular" },
+	{ family = "IBM Plex Sans JP", weight = "Regular" },
 })
 
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity = 0.9
-config.text_background_opacity = 0.9
+config.window_background_opacity = 0.85
+config.text_background_opacity = 0.85
 
 -- 閉じる際の確認をスキップするプロセス
-config.skip_close_confirmation_for_processes_named = { "bash", "sh", "zsh", "fish", "tmux", "nu", "cmd.exe", "pwsh.exe",
-  "powershell.exe" }
+config.skip_close_confirmation_for_processes_named =
+	{ "bash", "sh", "zsh", "fish", "tmux", "nu", "cmd.exe", "pwsh.exe", "powershell.exe" }
 
 config.window_padding = {
-  left = 0,
-  right = 0,
-  top = 0,
-  bottom = 0,
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
 }
 
 -- リーダーキー設定
@@ -74,85 +73,84 @@ config.leader = { key = "q", mods = "CTRL", timeout_milliseconds = 1000 }
 
 -- キーバインディング
 config.keys = {
-  { key = "c",     mods = "LEADER",     action = act.SpawnTab("CurrentPaneDomain") },
-  { key = "q",     mods = "LEADER",     action = act.CloseCurrentTab({ confirm = true }) },
-  { key = "n",     mods = "LEADER",     action = act.ActivateTabRelative(1) },
-  { key = "p",     mods = "LEADER",     action = act.ActivateTabRelative(-1) },
-  { key = "w",     mods = "LEADER",     action = act.ShowTabNavigator },
+	{ key = "c", mods = "LEADER", action = act.SpawnTab("CurrentPaneDomain") },
+	{ key = "q", mods = "LEADER", action = act.CloseCurrentTab({ confirm = true }) },
+	{ key = "n", mods = "LEADER", action = act.ActivateTabRelative(1) },
+	{ key = "p", mods = "LEADER", action = act.ActivateTabRelative(-1) },
+	{ key = "w", mods = "LEADER", action = act.ShowTabNavigator },
 
-  { key = "v",     mods = "LEADER",     action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
-  { key = "s",     mods = "LEADER",     action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
-  { key = "x",     mods = "LEADER",     action = act.CloseCurrentPane({ confirm = true }) },
-  { key = "z",     mods = "LEADER",     action = act.TogglePaneZoomState },
+	{ key = "v", mods = "LEADER", action = act.SplitHorizontal({ domain = "CurrentPaneDomain" }) },
+	{ key = "s", mods = "LEADER", action = act.SplitVertical({ domain = "CurrentPaneDomain" }) },
+	{ key = "x", mods = "LEADER", action = act.CloseCurrentPane({ confirm = true }) },
+	{ key = "z", mods = "LEADER", action = act.TogglePaneZoomState },
 
-  { key = "h",     mods = "LEADER",     action = act.ActivatePaneDirection("Left") },
-  { key = "l",     mods = "LEADER",     action = act.ActivatePaneDirection("Right") },
-  { key = "k",     mods = "LEADER",     action = act.ActivatePaneDirection("Up") },
-  { key = "j",     mods = "LEADER",     action = act.ActivatePaneDirection("Down") },
-  { key = "H",     mods = "LEADER",     action = act.AdjustPaneSize({ "Left", 10 }) },
-  { key = "L",     mods = "LEADER",     action = act.AdjustPaneSize({ "Right", 10 }) },
-  { key = "K",     mods = "LEADER",     action = act.AdjustPaneSize({ "Up", 5 }) },
-  { key = "J",     mods = "LEADER",     action = act.AdjustPaneSize({ "Down", 5 }) },
+	{ key = "h", mods = "LEADER", action = act.ActivatePaneDirection("Left") },
+	{ key = "l", mods = "LEADER", action = act.ActivatePaneDirection("Right") },
+	{ key = "k", mods = "LEADER", action = act.ActivatePaneDirection("Up") },
+	{ key = "j", mods = "LEADER", action = act.ActivatePaneDirection("Down") },
+	{ key = "H", mods = "LEADER", action = act.AdjustPaneSize({ "Left", 10 }) },
+	{ key = "L", mods = "LEADER", action = act.AdjustPaneSize({ "Right", 10 }) },
+	{ key = "K", mods = "LEADER", action = act.AdjustPaneSize({ "Up", 5 }) },
+	{ key = "J", mods = "LEADER", action = act.AdjustPaneSize({ "Down", 5 }) },
 
-  { key = "v",     mods = "CTRL|SHIFT", action = act.PasteFrom("Clipboard") },
+	{ key = "v", mods = "CTRL|SHIFT", action = act.PasteFrom("Clipboard") },
 
-  { key = "Enter", mods = "ALT",        action = "DisableDefaultAssignment" },
+	{ key = "Enter", mods = "ALT", action = "DisableDefaultAssignment" },
 }
 
 -- カラー設定
 config.colors = {
-  tab_bar = {
-    background = "#1b1f2f",
-    active_tab = {
-      bg_color = "#444b71",
-      fg_color = "#c6c8d1",
-      intensity = "Normal",
-      underline = "None",
-      italic = false,
-      strikethrough = false,
-    },
-    inactive_tab = {
-      bg_color = "#282d3e",
-      fg_color = "#c6c8d1",
-      intensity = "Normal",
-      underline = "None",
-      italic = false,
-      strikethrough = false,
-    },
-    inactive_tab_hover = {
-      bg_color = "#1b1f2f",
-      fg_color = "#c6c8d1",
-      intensity = "Normal",
-      underline = "None",
-      italic = true,
-      strikethrough = false,
-    },
-    new_tab = {
-      bg_color = "#1b1f2f",
-      fg_color = "#c6c8d1",
-      italic = false,
-    },
-    new_tab_hover = {
-      bg_color = "#444b71",
-      fg_color = "#c6c8d1",
-      italic = false,
-    },
-  },
+	tab_bar = {
+		background = "#1b1f2f",
+		active_tab = {
+			bg_color = "#444b71",
+			fg_color = "#c6c8d1",
+			intensity = "Normal",
+			underline = "None",
+			italic = false,
+			strikethrough = false,
+		},
+		inactive_tab = {
+			bg_color = "#282d3e",
+			fg_color = "#c6c8d1",
+			intensity = "Normal",
+			underline = "None",
+			italic = false,
+			strikethrough = false,
+		},
+		inactive_tab_hover = {
+			bg_color = "#1b1f2f",
+			fg_color = "#c6c8d1",
+			intensity = "Normal",
+			underline = "None",
+			italic = true,
+			strikethrough = false,
+		},
+		new_tab = {
+			bg_color = "#1b1f2f",
+			fg_color = "#c6c8d1",
+			italic = false,
+		},
+		new_tab_hover = {
+			bg_color = "#444b71",
+			fg_color = "#c6c8d1",
+			italic = false,
+		},
+	},
 }
 
 -- ============================================================
 -- イベントハンドラ (returnの外に出す必要があります)
 -- ============================================================
 wezterm.on("format-tab-title", function(tab, tabs, panes, config, hover, max_width)
-  -- タイトル取得のロジックを少し強化（もしタイトルが空ならプログレス名を表示など）
-  local title = tab.active_pane.title
-  if title == "" then
-    title = "Default"
-  end
-  return {
-    { Text = " " .. title .. " " },
-  }
+	-- タイトル取得のロジックを少し強化（もしタイトルが空ならプログレス名を表示など）
+	local title = tab.active_pane.title
+	if title == "" then
+		title = "Default"
+	end
+	return {
+		{ Text = " " .. title .. " " },
+	}
 end)
 
 return config
-
