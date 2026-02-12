@@ -4,3 +4,6 @@
 
 -- change <Leader>
 vim.g.mapleader = " "
+
+-- push jk to switch to normal mode
+vim.keymap.set("i", "jk", "<Esc>", { noremap = true })
