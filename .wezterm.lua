@@ -24,7 +24,7 @@ if is_windows then
 elseif is_mac then
 	-- 【Mac設定】
 	config.font_size = 12.0
-	config.default_prog = { "/bin/zsh", "-l" }
+	config.default_prog = { "/bin/zsh" }
 	config.macos_window_background_blur = 20
 
 	-- Mac特有のキーバインディング（OptionキーをMetaとして扱うなど）が必要ならここへ
