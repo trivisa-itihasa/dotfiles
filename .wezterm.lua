@@ -58,8 +58,6 @@ config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 0.85
 config.text_background_opacity = 1.0
 
-config.window_decorations = "RESIZE"
-
 -- 閉じる際の確認をスキップするプロセス
 config.skip_close_confirmation_for_processes_named =
 	{ "bash", "sh", "zsh", "fish", "tmux", "nu", "cmd.exe", "pwsh.exe", "powershell.exe" }
