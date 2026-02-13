@@ -56,7 +56,9 @@ config.font = wezterm.font_with_fallback({
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
 config.window_background_opacity = 0.85
-config.text_background_opacity = 0.85
+config.text_background_opacity = 1.0
+
+config.window_decorations = "RESIZE"
 
 -- 閉じる際の確認をスキップするプロセス
 config.skip_close_confirmation_for_processes_named =
@@ -98,10 +100,6 @@ config.keys = {
 
 	{ key = "Enter", mods = "ALT", action = "DisableDefaultAssignment" },
 }
-
--- カラー設定
-config.color_scheme = "Monokai Pro (Gogh)"
-
 -- ============================================================
 -- イベントハンドラ (returnの外に出す必要があります)
 -- ============================================================
