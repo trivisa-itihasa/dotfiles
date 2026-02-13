@@ -49,7 +49,7 @@ config.color_scheme = "iceberg-dark"
 
 config.font = wezterm.font_with_fallback({
 	{ family = "MonoLisa Nerd Font", weight = "Regular" },
-	{ family = "IBM Plex Sans JP", weight = "Regular" },
+	{ family = "BIZ UDGothic", weight = "Regular" },
 })
 
 config.use_fancy_tab_bar = false
