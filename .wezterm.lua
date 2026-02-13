@@ -49,6 +49,7 @@ config.color_scheme = "iceberg-dark"
 
 config.font = wezterm.font_with_fallback({
 	{ family = "MonoLisa Nerd Font", weight = "Regular" },
+	{ family = "Line Seed JP", weight = "Regular" },
 	{ family = "BIZ UDGothic", weight = "Regular" },
 })
 
