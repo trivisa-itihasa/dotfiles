@@ -17,10 +17,22 @@ $cmd_duration\
 $line_break\
 $character"""
 
+# カラーパレット
+[palettes.monokai_pro]
+color_dark = "#19181a"
+color_black = "#221f22"
+color_red = "#ff6188"
+color_green = "#a9dc76"
+color_yellow = "#ffd866"
+color_orange = "#fc9867"
+color_purple = "#ab9df2"
+color_cyan = "#78dce8"
+color_white = "#fcfcfa"
+
 # 文字設定
 [character]
-success_symbol = "[➜](bold green)"
-error_symbol = "[➜](bold red)"
+success_symbol = "[>](bold green)"
+error_symbol = "[>](bold red)"
 vicmd_symbol = "[V](bold green)"
 
 # ディレクトリ表示
