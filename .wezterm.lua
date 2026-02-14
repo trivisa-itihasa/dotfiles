@@ -20,7 +20,7 @@ if is_windows then
 	config.win32_system_backdrop = "Acrylic"
 
 	-- Windowsはフォント描画が異なるため、サイズを微調整しても良い
-	config.font_size = 12.0
+	config.font_size = 11.0
 elseif is_mac then
 	-- 【Mac設定】
 	config.font_size = 12.0

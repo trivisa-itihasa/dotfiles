@@ -65,3 +65,6 @@ eval "$(starship init zsh)"
 
 # ローカル設定があれば読み込み
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# Neovim path
+export PATH="/opt/nvim-linux-x86_64/bin:$PATH"
