@@ -65,3 +65,5 @@ eval "$(starship init zsh)"
 
 # ローカル設定があれば読み込み
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+. "$HOME/.local/bin/env"
