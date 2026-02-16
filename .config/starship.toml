@@ -17,6 +17,8 @@ $cmd_duration\
 $line_break\
 $character"""
 
+palette = "monokai_pro"
+
 # カラーパレット
 [palettes.monokai_pro]
 color_dark = "#19181a"
@@ -31,27 +33,27 @@ color_white = "#fcfcfa"
 
 # 文字設定
 [character]
-success_symbol = "[>](bold green)"
-error_symbol = "[>](bold red)"
-vicmd_symbol = "[V](bold green)"
+success_symbol = "[>](bold color_green)"
+error_symbol = "[>](bold color_red)"
+vicmd_symbol = "[V](bold color_green)"
 
 # ディレクトリ表示
 [directory]
-style = "cyan bold"
-truncation_length = 3
+style = "bold color_green"
+truncation_length = 0
 truncation_symbol = "…/"
-home_symbol = "🏠"
+home_symbol = "~"
 
 # Git ブランチ
 [git_branch]
-symbol = "🌱 "
-style = "bold purple"
+symbol = " "
+style = "bold color_purple"
 truncation_length = 20
 truncation_symbol = "…"
 
 # Git ステータス
 [git_status]
-style = "bold red"
+style = "bold color_red"
 ahead = "↑${count}"
 diverged = "↕↑${ahead_count}↓${behind_count}"
 behind = "↓${count}"
@@ -65,47 +67,46 @@ deleted = "DELETED"
 
 # ユーザー名
 [username]
-style_user = "yellow bold"
-style_root = "red bold"
-format = "[$user]($style) "
+style_user = "bold color_yellow"
+style_root = "bold color_red"
+format = "[$user ]($style)"
 disabled = false
 show_always = true
 
 # ホスト名
 [hostname]
 ssh_only = false
-format = "on [$hostname](bold blue) "
+format = "on [$hostname](bold color_orange) "
 disabled = false
 
 # 実行時間
 [cmd_duration]
 min_time = 2_000
-format = "took [$duration](bold yellow)"
+format = "took [$duration](bold color_yellow)"
 
 # プログラミング言語固有設定
 [nodejs]
 symbol = "⬢ "
-style = "bold green"
+style = "bold color_green"
 
 [python]
 symbol = "🐍 "
-style = "bold yellow"
+style = "bold color_yellow"
 
 [rust]
 symbol = "🦀 "
-style = "bold red"
+style = "bold color_red"
 
 [java]
 symbol = "☕ "
-style = "bold red"
+style = "bold color_red"
 
 # Docker
 [docker_context]
 symbol = "🐳 "
-style = "bold blue"
+style = "bold color_cyan"
 
 # Kubernetes
 [kubernetes]
-format = 'on [⛵ $context \($namespace\)](dimmed green) '
+format = 'on [⛵ $context \($namespace\)](bold color_green) '
 disabled = false
-
