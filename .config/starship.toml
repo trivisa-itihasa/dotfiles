@@ -42,7 +42,7 @@ vicmd_symbol = "[V](bold color_green)"
 style = "bold color_green"
 truncation_length = 0
 truncation_symbol = ".../"
-desktop_symbpl = "~/Desktop/"
+truncate_to_repo = false
 home_symbol = "~"
 
 # Git ブランチ
