@@ -35,7 +35,6 @@ color_white = "#fcfcfa"
 [character]
 success_symbol = "[>](bold color_green)"
 error_symbol = "[>](bold color_red)"
-vicmd_symbol = "[V](bold color_green)"
 
 # ディレクトリ表示
 [directory]
