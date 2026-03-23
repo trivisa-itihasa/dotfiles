@@ -45,7 +45,7 @@ config.initial_cols = 100
 config.initial_rows = 40
 config.cell_width = 1.0
 config.line_height = 1.0
-config.color_scheme = "iceberg-dark"
+config.color_scheme = "Monokai Pro (Gogh)"
 
 config.font = wezterm.font_with_fallback({
 	{ family = "MonoLisa Nerd Font", weight = "Regular" },
