@@ -17,7 +17,7 @@ local is_mac = target:find("apple") ~= nil
 if is_windows then
 	-- 【Windows設定】
 	config.default_domain = "WSL:Ubuntu-24.04"
-	config.win32_system_backdrop = "Acrylic"
+	-- config.win32_system_backdrop = "Acrylic"
 
 	-- Windowsはフォント描画が異なるため、サイズを微調整しても良い
 	config.font_size = 12.0
@@ -25,7 +25,7 @@ elseif is_mac then
 	-- 【Mac設定】
 	config.font_size = 12.0
 	config.default_prog = { "/bin/zsh", "-l" }
-	config.macos_window_background_blur = 20
+	-- config.macos_window_background_blur = 20
 
 	-- Mac特有のキーバインディング（OptionキーをMetaとして扱うなど）が必要ならここへ
 	config.send_composed_key_when_left_alt_is_pressed = true
@@ -34,7 +34,7 @@ else
 	-- 【Linux設定】
 	config.font_size = 12.0
 	config.default_prog = { "/bin/zsh" }
-	config.kde_window_background_blur = true
+	-- config.kde_window_background_blur = true
 end
 
 -- ============================================================
@@ -55,8 +55,8 @@ config.font = wezterm.font_with_fallback({
 
 config.use_fancy_tab_bar = false
 config.hide_tab_bar_if_only_one_tab = true
-config.window_background_opacity = 0.85
-config.text_background_opacity = 1.0
+-- config.window_background_opacity = 0.85
+-- config.text_background_opacity = 1.0
 
 -- 閉じる際の確認をスキップするプロセス
 config.skip_close_confirmation_for_processes_named =
