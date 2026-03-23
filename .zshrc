@@ -64,7 +64,7 @@ alias gco='git checkout'
 eval "$(starship init zsh)"
 
 # ローカル設定があれば読み込み
-[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+[[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
 
 # neovim path
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
