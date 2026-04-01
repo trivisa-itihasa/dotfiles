@@ -60,11 +60,14 @@ alias gd='git diff'
 alias gb='git branch'
 alias gco='git checkout'
 
+# 同期 エイリアス
+alias sync='git -C ~/dotfiles pull'
+
 # Starship初期化
 eval "$(starship init zsh)"
 
 # ローカル設定があれば読み込み
-[[ -f ~/.zshrc_local ]] && source ~/.zshrc_local
+[[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
 
 # neovim path
 export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
