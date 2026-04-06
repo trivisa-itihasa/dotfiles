@@ -11,3 +11,4 @@
 !.zshrc
 !.config/nvim/**
 !.config/starship.toml
+!.config/gitui/*

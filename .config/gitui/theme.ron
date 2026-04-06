@@ -1,0 +1,37 @@
+// Monokai Pro theme for gitui
+// Based on Monokai Pro (Gogh) color palette
+//
+// Palette:
+//   Background : #2D2A2E
+//   Foreground : #FCFCFA
+//   Red/Pink   : #FF6188
+//   Orange     : #FC9867
+//   Yellow     : #FFD866
+//   Green      : #A9DC76
+//   Cyan       : #78DCE8
+//   Purple     : #AB9DF2
+//   Dark Gray  : #403E41
+//   Gray       : #727072
+(
+  selected_tab:            Some("#FC9867"),  // orange  — active tab indicator
+  command_fg:              Some("#939293"),  // light gray — command bar text
+  selection_bg:            Some("#403E41"),  // dark gray — selected item background
+  selection_fg:            Some("#FCFCFA"),  // foreground — selected item text
+  cmdbar_bg:               Some("#2D2A2E"),  // background — command bar
+  cmdbar_extra_lines_bg:   Some("#2D2A2E"),  // background — command bar extra lines
+  disabled_fg:             Some("#727072"),  // gray — disabled text
+  diff_line_add:           Some("#A9DC76"),  // green — added diff lines
+  diff_line_delete:        Some("#FF6188"),  // red/pink — deleted diff lines
+  diff_file_added:         Some("#A9DC76"),  // green — added file
+  diff_file_removed:       Some("#FF6188"),  // red/pink — removed file
+  diff_file_moved:         Some("#78DCE8"),  // cyan — moved file
+  diff_file_modified:      Some("#FFD866"),  // yellow — modified file
+  commit_hash:             Some("#AB9DF2"),  // purple — commit hash
+  commit_time:             Some("#78DCE8"),  // cyan — commit timestamp
+  commit_author:           Some("#A9DC76"),  // green — commit author
+  danger_fg:               Some("#FF6188"),  // red/pink — danger/warning text
+  push_gauge_bg:           Some("#403E41"),  // dark gray — push progress bar bg
+  push_gauge_fg:           Some("#A9DC76"),  // green — push progress bar fg
+  tag_fg:                  Some("#FC9867"),  // orange — tag name
+  branch_fg:               Some("#FFD866"),  // yellow — branch name
+)
