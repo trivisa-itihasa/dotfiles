@@ -1,17 +1,22 @@
 // Monokai Pro theme for gitui
-// Based on Monokai Pro (Gogh) color palette
+// Based on official Monokai Pro palette (pro filter)
 //
 // Palette:
-//   Background : #2D2A2E
+//   Background : #2D2A2E   (base)
+//   Dark1      : #221F22
+//   Dark2      : #19181A   (darkest)
 //   Foreground : #FCFCFA
-//   Red/Pink   : #FF6188
-//   Orange     : #FC9867
-//   Yellow     : #FFD866
-//   Green      : #A9DC76
-//   Cyan       : #78DCE8
-//   Purple     : #AB9DF2
-//   Dark Gray  : #403E41
-//   Gray       : #727072
+//   Red/Pink   : #FF6188   (accent1)
+//   Orange     : #FC9867   (accent2)
+//   Yellow     : #FFD866   (accent3)
+//   Green      : #A9DC76   (accent4)
+//   Cyan       : #78DCE8   (accent5)
+//   Purple     : #AB9DF2   (accent6)
+//   Dimmed1    : #C1C0C0
+//   Dimmed2    : #939293
+//   Dimmed3    : #727072
+//   Dimmed4    : #5B595C
+//   Dimmed5    : #403E41
 (
   selected_tab:            Some("#FC9867"),  // orange  — active tab indicator
   command_fg:              Some("#939293"),  // light gray — command bar text

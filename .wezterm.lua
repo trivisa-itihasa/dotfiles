@@ -42,7 +42,61 @@ config.initial_cols = 100
 config.initial_rows = 40
 config.cell_width = 1.0
 config.line_height = 1.0
-config.color_scheme = "Monokai Pro (Gogh)"
+-- Official Monokai Pro palette (pro filter) — unified with gitui/nvim
+config.colors = {
+	foreground = "#FCFCFA",
+	background = "#2D2A2E",
+	cursor_bg = "#FCFCFA",
+	cursor_fg = "#2D2A2E",
+	cursor_border = "#FCFCFA",
+	selection_fg = "#FCFCFA",
+	selection_bg = "#403E41",
+	scrollbar_thumb = "#5B595C",
+	split = "#403E41",
+	ansi = {
+		"#403E41", -- black
+		"#FF6188", -- red
+		"#A9DC76", -- green
+		"#FFD866", -- yellow
+		"#78DCE8", -- blue
+		"#AB9DF2", -- magenta
+		"#78DCE8", -- cyan
+		"#FCFCFA", -- white
+	},
+	brights = {
+		"#727072", -- bright black
+		"#FF6188", -- bright red
+		"#A9DC76", -- bright green
+		"#FFD866", -- bright yellow
+		"#78DCE8", -- bright blue
+		"#AB9DF2", -- bright magenta
+		"#78DCE8", -- bright cyan
+		"#FCFCFA", -- bright white
+	},
+	tab_bar = {
+		background = "#19181A",
+		active_tab = {
+			bg_color = "#2D2A2E",
+			fg_color = "#FCFCFA",
+		},
+		inactive_tab = {
+			bg_color = "#221F22",
+			fg_color = "#727072",
+		},
+		inactive_tab_hover = {
+			bg_color = "#403E41",
+			fg_color = "#939293",
+		},
+		new_tab = {
+			bg_color = "#19181A",
+			fg_color = "#727072",
+		},
+		new_tab_hover = {
+			bg_color = "#403E41",
+			fg_color = "#FCFCFA",
+		},
+	},
+}
 
 config.font = wezterm.font_with_fallback({
 	{ family = "MonoLisa Nerd Font", weight = "Regular" },
