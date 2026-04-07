@@ -42,7 +42,15 @@ return {
         gitui:toggle()
       end
 
-      vim.keymap.set("n", "<leader>gg", toggle, { desc = "GitUI (Float)" })
+      -- Set after VeryLazy to override LazyVim's default <leader>gg (lazygit)
+      vim.api.nvim_create_autocmd("User", {
+        pattern = "VeryLazy",
+        once = true,
+        callback = function()
+          pcall(vim.keymap.del, "n", "<leader>gg")
+          vim.keymap.set("n", "<leader>gg", toggle, { desc = "GitUI (Float)" })
+        end,
+      })
     end,
   },
 }
