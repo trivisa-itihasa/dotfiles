@@ -34,6 +34,7 @@
   commit_hash:             Some("#AB9DF2"),  // purple — commit hash
   commit_time:             Some("#78DCE8"),  // cyan — commit timestamp
   commit_author:           Some("#A9DC76"),  // green — commit author
+  block_title_focused:     Some("#FCFCFA"),  // white — focused panel title
   danger_fg:               Some("#FF6188"),  // red/pink — danger/warning text
   push_gauge_bg:           Some("#403E41"),  // dark gray — push progress bar bg
   push_gauge_fg:           Some("#A9DC76"),  // green — push progress bar fg

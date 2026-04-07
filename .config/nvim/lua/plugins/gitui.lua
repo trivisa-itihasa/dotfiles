@@ -18,6 +18,13 @@ return {
         on_open = function(term)
           vim.cmd("startinsert!")
           vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+          vim.schedule(function()
+            vim.api.nvim_set_hl(0, "GituiNormalFloat", { bg = "#2d2a2e" })
+            vim.api.nvim_set_hl(0, "GituiFloatBorder", { fg = "#fcfcfa", bg = "#2d2a2e" })
+            if vim.api.nvim_win_is_valid(term.window) then
+              vim.api.nvim_set_option_value("winhl", "NormalFloat:GituiNormalFloat,FloatBorder:GituiFloatBorder", { win = term.window })
+            end
+          end)
         end,
         on_close = function()
           if from_dashboard then
