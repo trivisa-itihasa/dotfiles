@@ -3,32 +3,39 @@ return {
     "akinsho/toggleterm.nvim",
     config = function()
       require("toggleterm").setup({
-        direction = "float", -- 浮動ウィンドウで表示
+        direction = "float",
         float_opts = {
           border = "curved",
         },
       })
 
-      -- gitui 起動用の関数を定義
       local Terminal = require("toggleterm.terminal").Terminal
+      local from_dashboard = false
       local gitui = Terminal:new({
         cmd = "gitui",
         hidden = true,
         direction = "float",
-        -- 閉じた時にバッファを削除
         on_open = function(term)
           vim.cmd("startinsert!")
-          -- ターミナル内でのキー操作設定（任意）
           vim.api.nvim_buf_set_keymap(term.bufnr, "n", "q", "<cmd>close<CR>", { noremap = true, silent = true })
+        end,
+        on_close = function()
+          if from_dashboard then
+            vim.schedule(function()
+              vim.o.laststatus = 0
+              vim.o.showtabline = 0
+              vim.cmd("redraw!")
+            end)
+          end
         end,
       })
 
-      function _gitui_toggle()
+      local function toggle()
+        from_dashboard = vim.bo.filetype == "snacks_dashboard"
         gitui:toggle()
       end
 
-      -- キーマッピング (例: <leader>gg)
-      vim.keymap.set("n", "<leader>gg", "<cmd>lua _gitui_toggle()<CR>", { desc = "GitUI (Float)" })
+      vim.keymap.set("n", "<leader>gg", toggle, { desc = "GitUI (Float)" })
     end,
   },
 }

@@ -8,7 +8,6 @@ export LANG=ja_JP.UTF-8
 setopt AUTO_CD
 setopt CORRECT
 setopt SHARE_HISTORY
-setopt HIST_IGNORE_DUPS
 setopt HIST_IGNORE_ALL_DUPS
 setopt HIST_SAVE_NO_DUPS
 export HISTFILE=~/.zsh_history
@@ -34,7 +33,10 @@ case $OSTYPE in
     # Linux/WSL設定
     alias ls='ls --color=auto'
     alias grep='grep --color=auto'
-    
+
+    # Neovim (Linux appimage)
+    export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
+
     # WSL固有設定
     if grep -qi microsoft /proc/version 2>/dev/null; then
       export DISPLAY=$(ip route list default | awk '{print $3}'):0
@@ -63,15 +65,14 @@ alias gco='git checkout'
 # 同期 エイリアス
 alias sync='git -C ~/dotfiles pull'
 
+# ~/.local/bin (Claude Code CLI等)
+export PATH="$HOME/.local/bin:$PATH"
+
 # Starship初期化
 eval "$(starship init zsh)"
 
 # ローカル設定があれば読み込み
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
-
-# neovim path
-export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
-export PATH="$HOME/.local/bin:$PATH"
 
 # nvm (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"

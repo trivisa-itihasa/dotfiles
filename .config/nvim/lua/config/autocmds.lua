@@ -17,26 +17,22 @@ local function show_statusline()
   vim.o.showtabline = 1
 end
 
-vim.api.nvim_create_autocmd("FileType", {
-  pattern = "snacks_dashboard",
-  callback = hide_statusline,
-})
-vim.api.nvim_create_autocmd("BufEnter", {
+local group = vim.api.nvim_create_augroup("dashboard_statusline", { clear = true })
+
+vim.api.nvim_create_autocmd({ "FileType", "BufEnter", "WinEnter" }, {
+  group = group,
   callback = function(ev)
     if vim.bo[ev.buf].filetype == "snacks_dashboard" then
       hide_statusline()
     end
   end,
 })
+
 vim.api.nvim_create_autocmd("BufLeave", {
+  group = group,
   callback = function(ev)
     if vim.bo[ev.buf].filetype == "snacks_dashboard" then
       show_statusline()
     end
   end,
 })
-
--- Apply immediately if already on dashboard when VeryLazy fires
-if vim.bo.filetype == "snacks_dashboard" then
-  hide_statusline()
-end

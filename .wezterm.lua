@@ -14,16 +14,14 @@ local target = wezterm.target_triple
 local is_windows = target:find("windows") ~= nil
 local is_mac = target:find("apple") ~= nil
 
+config.font_size = 12.0
+
 if is_windows then
 	-- 【Windows設定】
 	config.default_domain = "WSL:Ubuntu-24.04"
 	-- config.win32_system_backdrop = "Acrylic"
-
-	-- Windowsはフォント描画が異なるため、サイズを微調整しても良い
-	config.font_size = 12.0
 elseif is_mac then
 	-- 【Mac設定】
-	config.font_size = 12.0
 	config.default_prog = { "/bin/zsh", "-l" }
 	-- config.macos_window_background_blur = 20
 
@@ -32,7 +30,6 @@ elseif is_mac then
 	config.send_composed_key_when_right_alt_is_pressed = true
 else
 	-- 【Linux設定】
-	config.font_size = 12.0
 	config.default_prog = { "/bin/zsh" }
 	-- config.kde_window_background_blur = true
 end
