@@ -18,6 +18,14 @@ vim.api.nvim_create_autocmd("BufEnter", {
   end,
 })
 
+-- VeryLazy後にすでにダッシュボードにいる場合（起動時）にも適用
+vim.schedule(function()
+  if vim.bo.filetype == "snacks_dashboard" then
+    vim.o.laststatus = 0
+    vim.o.showtabline = 0
+  end
+end)
+
 vim.api.nvim_create_autocmd("BufLeave", {
   callback = function()
     if vim.bo.filetype == "snacks_dashboard" then
