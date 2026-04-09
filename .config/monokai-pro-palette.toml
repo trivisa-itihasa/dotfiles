@@ -1,0 +1,33 @@
+# Monokai Pro — Standard Color Palette (filter: "pro")
+#
+# Single source of truth for all tool themes in this dotfiles repo.
+# Reference: https://monokai.pro/ (official "Pro" filter)
+#
+# Applied in:
+#   - .wezterm.lua                        (wezterm)
+#   - .config/starship.toml               (starship)
+#   - .config/gitui/theme.ron             (gitui)
+#   - .config/nvim/lua/plugins/colorscheme.lua  (loctvl842/monokai-pro.nvim, filter="pro")
+#
+# When changing colors, update this file first, then propagate to each tool.
+
+[base]
+background  = "#2D2A2E"  # default bg
+foreground  = "#FCFCFA"  # default fg
+dark1       = "#221F22"  # darker bg (inactive panels)
+dark2       = "#19181A"  # darkest bg (tab bar / status)
+
+[accent]
+red         = "#FF6188"  # error, deletions, danger
+orange      = "#FC9867"  # tags, hostnames, active tab
+yellow      = "#FFD866"  # branches, strings, warnings
+green       = "#A9DC76"  # success, additions, directories
+cyan        = "#78DCE8"  # info, moved files, timestamps
+purple      = "#AB9DF2"  # commit hashes, git branch symbol
+
+[dimmed]
+dimmed1     = "#C1C0C0"
+dimmed2     = "#939293"  # command bar text
+dimmed3     = "#727072"  # disabled / inactive
+dimmed4     = "#5B595C"  # scrollbar thumb
+dimmed5     = "#403E41"  # selection bg, split borders

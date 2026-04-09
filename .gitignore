@@ -12,3 +12,4 @@
 !.config/nvim/**
 !.config/starship.toml
 !.config/gitui/*
+!.config/monokai-pro-palette.toml
