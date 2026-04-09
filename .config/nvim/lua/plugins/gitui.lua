@@ -10,8 +10,14 @@ return {
       })
 
       local Terminal = require("toggleterm.terminal").Terminal
+      local gitui_cmd = vim.fn.exepath("gitui")
+      if gitui_cmd == "" then
+        vim.notify("gitui not found in PATH", vim.log.levels.ERROR)
+        return
+      end
+
       local gitui = Terminal:new({
-        cmd = "gitui",
+        cmd = gitui_cmd,
         hidden = true,
         direction = "float",
         on_open = function(term)
