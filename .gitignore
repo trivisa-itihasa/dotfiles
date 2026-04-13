@@ -1,15 +1,2 @@
-# Ignore all files
-*
-!*/
-
-# Whitelisted files
-!.git/*
-!.gitconfig
-!.gitignore
-!README.md
-!.wezterm.lua
-!.zshrc
-!.config/nvim/**
-!.config/starship.toml
-!.config/gitui/*
-!.config/monokai-pro-palette.toml
+.DS_Store
+.claude/

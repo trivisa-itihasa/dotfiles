@@ -1,0 +1,11 @@
+# Symlink mapping for dotfiles
+# Format: source (relative to dotfiles/) -> target (relative to $HOME)
+# Lines starting with # are comments, empty lines are ignored
+
+zsh/.zshrc                      -> .zshrc
+wezterm/.wezterm.lua            -> .wezterm.lua
+git/.gitconfig                  -> .gitconfig
+nvim                            -> .config/nvim
+starship/starship.toml          -> .config/starship.toml
+gitui                           -> .config/gitui
+misc/monokai-pro-palette.toml   -> .config/monokai-pro-palette.toml

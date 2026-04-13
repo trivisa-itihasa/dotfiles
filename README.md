@@ -132,9 +132,9 @@ bash ~/dotfiles/script/install.sh
 ```
 
 The script:
+- Reads `script/structure.map` to determine symlink mappings
 - Creates `~/.dotbackup/` and moves any existing conflicting files there
-- Symlinks all dotfiles from `~/dotfiles` to `$HOME`
-- Symlinks `.config/` subdirectories individually (e.g., `nvim`, `gitui`, `starship.toml`)
+- Symlinks each config to its target location in `$HOME`
 
 Use `--debug` / `-d` for verbose output.
 
@@ -187,16 +187,23 @@ sync   # alias for: git -C ~/dotfiles pull
 
 ```
 dotfiles/
-├── .config/
-│   ├── nvim/              # Neovim + LazyVim configuration
-│   │   ├── lua/config/    # options, keymaps, autocmds, lazy bootstrap
-│   │   └── lua/plugins/   # plugin specs
-│   ├── gitui/
-│   │   └── theme.ron      # Monokai Pro theme for GitUI
-│   └── starship.toml      # Starship prompt configuration
-├── script/
-│   └── install.sh         # Symlink installer
-├── .wezterm.lua           # WezTerm configuration
-├── .zshrc                 # Zsh configuration
-└── .gitconfig             # Git configuration
+├── zsh/                   # Zsh configuration
+│   └── .zshrc
+├── wezterm/               # WezTerm configuration
+│   └── .wezterm.lua
+├── git/                   # Git configuration
+│   └── .gitconfig
+├── nvim/                  # Neovim + LazyVim configuration
+│   ├── lua/config/        # options, keymaps, autocmds, lazy bootstrap
+│   └── lua/plugins/       # plugin specs
+├── starship/              # Starship prompt configuration
+│   └── starship.toml
+├── gitui/                 # GitUI configuration
+│   ├── key_bindings.ron
+│   └── theme.ron
+├── misc/                  # Shared / cross-tool files
+│   └── monokai-pro-palette.toml
+└── script/
+    ├── install.sh         # Symlink installer
+    └── structure.map      # Source -> target symlink mappings
 ```
