@@ -109,11 +109,11 @@ chsh -s $(which zsh)
 
 ### Windows (WSL2)
 
-WezTerm on Windows connects to WSL2 automatically (`default_domain = "WSL:Ubuntu-24.04"`).
+WezTerm on Windows connects to WSL2 automatically (`default_domain = "WSL:{DistroName}"`).
 
 ```powershell
 # 1. Install WSL2 with Ubuntu 24.04
-wsl --install -d Ubuntu-24.04
+wsl --install -d {DistroName}
 
 # 2. Install WezTerm for Windows
 winget install wez.wezterm
@@ -121,7 +121,15 @@ winget install wez.wezterm
 
 Then inside the WSL2 terminal, follow the **Ubuntu** steps above.
 
-> The WezTerm config sets `default_domain = "WSL:Ubuntu-24.04"`. Adjust this in `.wezterm.lua` if your distro name is different.
+WezTerm runs on the Windows side (not inside WSL), so its config must be symlinked from Windows. Run the following in **PowerShell as Administrator**:
+
+```powershell
+New-Item -Path "$env:USERPROFILE\.wezterm.lua" `
+         -ItemType SymbolicLink `
+         -Value "\\wsl.localhost\{DistroName}\home\{UserName}\dotfiles\wezterm\.wezterm.lua"
+```
+
+> The WezTerm config sets `default_domain = "WSL:{DistroName}"`. Adjust this in `.wezterm.lua` if your distro name is different.
 
 ---
 
