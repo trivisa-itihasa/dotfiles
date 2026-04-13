@@ -201,8 +201,7 @@ dotfiles/
 ├── gitui/                 # GitUI configuration
 │   ├── key_bindings.ron
 │   └── theme.ron
-├── misc/                  # Shared / cross-tool files
-│   └── monokai-pro-palette.toml
+├── monokai-pro-palette.toml  # Monokai Pro color reference
 └── script/
     ├── install.sh         # Symlink installer
     └── structure.map      # Source -> target symlink mappings
