@@ -5,7 +5,7 @@ return {
     dashboard = {
       -- dashboard configuration
       preset = {
-        header = [[NEOVIM]],
+        header = [[Neovim]],
       },
     },
   },
