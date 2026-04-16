@@ -8,3 +8,4 @@ git/.gitconfig                  -> .gitconfig
 nvim                            -> .config/nvim
 starship/starship.toml          -> .config/starship.toml
 gitui                           -> .config/gitui
+claude/settings.json            -> .claude/settings.json
