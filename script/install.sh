@@ -63,7 +63,7 @@ install() {
     backup_and_link "$DOTDIR/$src" "$HOME/$target"
   done < "$STRUCTURE_FILE"
 
-  command echo -e "\e[1;36m Install completed! \e[m"
+  printf '\e[1;36m Install completed! \e[m\n'
 }
 
 while [[ $# -gt 0 ]]; do
