@@ -63,7 +63,9 @@ alias gb='git branch'
 alias gco='git checkout'
 
 # 同期 エイリアス
-alias sync='git -C ~/dotfiles pull'
+function sync {
+  git -C ~/dotfiles pull && bash ~/dotfiles/script/install.sh
+}
 
 # ~/.local/bin (Claude Code CLI等)
 export PATH="$HOME/.local/bin:$PATH"
