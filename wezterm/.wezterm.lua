@@ -109,9 +109,6 @@ config.hide_tab_bar_if_only_one_tab = true
 -- config.window_background_opacity = 0.85
 -- config.text_background_opacity = 1.0
 
-if is_mac then
-	config.window_decorations = "RESIZE"
-end
 config.max_fps = 120
 
 -- 閉じる際の確認をスキップするプロセス
