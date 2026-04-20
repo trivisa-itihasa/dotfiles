@@ -17,10 +17,15 @@
 
     edit_file: Some(( code: Char('I'), modifiers: "SHIFT")),
 
+    stage_unstage_item: Some(( code: Char(' '), modifiers: "")),
     status_reset_item: Some(( code: Char('U'), modifiers: "SHIFT")),
 
     diff_reset_lines: Some(( code: Char('u'), modifiers: "")),
     diff_stage_lines: Some(( code: Char('s'), modifiers: "")),
+
+    commit_confirm: Some(( code: Enter, modifiers: "")),
+
+    push: Some(( code: Char('p'), modifiers: "")),
 
     stashing_save: Some(( code: Char('w'), modifiers: "")),
     stashing_toggle_index: Some(( code: Char('m'), modifiers: "")),
