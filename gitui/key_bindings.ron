@@ -23,7 +23,7 @@
     diff_reset_lines: Some(( code: Char('u'), modifiers: "")),
     diff_stage_lines: Some(( code: Char('s'), modifiers: "")),
 
-    commit_confirm: Some(( code: Enter, modifiers: "")),
+    commit_submit: Some(( code: Enter, modifiers: "")),
 
     push: Some(( code: Char('p'), modifiers: "")),
 
