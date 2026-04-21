@@ -71,7 +71,9 @@ function sync {
 export PATH="$HOME/.local/bin:$PATH"
 
 # Starship初期化
-eval "$(starship init zsh)"
+if [[ "$TERM_PROGRAM" == "WezTerm" ]]; then
+  eval "$(starship init zsh)"
+fi
 
 # ローカル設定があれば読み込み
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local

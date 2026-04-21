@@ -19,6 +19,7 @@ config.font_size = 12.0
 if is_windows then
 	-- 【Windows設定】
 	config.default_domain = "WSL:Ubuntu-24.04"
+	config.set_environment_variables = { TERM_PROGRAM = "WezTerm" }
 	-- config.win32_system_backdrop = "Acrylic"
 elseif is_mac then
 	-- 【Mac設定】
