@@ -37,6 +37,7 @@ else
 	config.front_end = "WebGpu"
 	config.use_ime = true
 	config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
+	config.integrated_title_button_style = "Gnome"
 end
 
 -- ============================================================
