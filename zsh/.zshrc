@@ -1,7 +1,7 @@
 # ~/.zshrc または ~/dotfiles/.zshrc
 
 # 基本設定
-export EDITOR=vim
+export EDITOR=nvim
 export LANG=ja_JP.UTF-8
 
 # zsh設定
@@ -67,7 +67,7 @@ function sync {
   git -C ~/dotfiles pull && bash ~/dotfiles/script/install.sh
 }
 
-# ~/.local/bin (Claude Code CLI等)
+# ~/.local/bin
 export PATH="$HOME/.local/bin:$PATH"
 
 # Starship初期化

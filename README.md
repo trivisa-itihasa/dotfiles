@@ -11,7 +11,7 @@ Personal development environment configuration using a Monokai Pro theme through
 | [Starship](https://starship.rs/) | Shell prompt |
 | [Neovim](https://neovim.io/) + [LazyVim](https://lazyvim.org/) | Editor |
 | [GitUI](https://github.com/extrawurst/gitui) | Git TUI |
-| [Claude Code](https://claude.ai/code) | AI coding assistant (Neovim integration) |
+| [OpenCode](https://github.com/opencode-ai/opencode) | AI coding assistant (terminal) |
 
 ## Required Programs
 
@@ -41,7 +41,7 @@ The following fonts must be installed on your system:
 | Program | Notes |
 |---------|-------|
 | [nvm](https://github.com/nvm-sh/nvm) | Node.js version manager |
-| [Claude Code CLI](https://claude.ai/code) | Required for Neovim AI integration; install to `~/.local/bin/claude` |
+| [OpenCode](https://github.com/opencode-ai/opencode) | Terminal-based AI coding assistant |
 | git-lfs | Large file support |
 
 ---
@@ -63,10 +63,13 @@ brew install --cask wezterm
 # 4. Install fonts (via Homebrew Cask or manually)
 brew install --cask font-biz-udgothic
 
-# 5. Clone this repo
+# 5. Install OpenCode
+brew install opencode-ai/tap/opencode
+
+# 6. Clone this repo
 git clone https://github.com/<your-username>/dotfiles.git ~/dotfiles
 
-# 6. Run the install script
+# 7. Run the install script
 bash ~/dotfiles/script/install.sh
 ```
 
@@ -97,13 +100,16 @@ echo 'deb [signed-by=/usr/share/keyrings/wezterm-fury.gpg] https://apt.fury.io/w
   | sudo tee /etc/apt/sources.list.d/wezterm.list
 sudo apt update && sudo apt install -y wezterm
 
-# 6. Clone this repo
+# 6. Install OpenCode
+curl -fsSL https://raw.githubusercontent.com/opencode-ai/opencode/refs/heads/main/install | bash
+
+# 7. Clone this repo
 git clone https://github.com/<your-username>/dotfiles.git ~/dotfiles
 
-# 7. Run the install script
+# 8. Run the install script
 bash ~/dotfiles/script/install.sh
 
-# 8. Change default shell to zsh (if needed)
+# 9. Change default shell to zsh (if needed)
 chsh -s $(which zsh)
 ```
 
@@ -179,15 +185,6 @@ sync   # alias for: git -C ~/dotfiles pull
 |-----|--------|
 | `jk` | Exit insert mode |
 | `<leader>gg` | Toggle GitUI (float) |
-| `<leader>ac` | Toggle Claude Code |
-| `<leader>af` | Focus Claude |
-| `<leader>ar` | Resume Claude session |
-| `<leader>aC` | Continue Claude |
-| `<leader>am` | Select Claude model |
-| `<leader>ab` | Add current buffer to Claude |
-| `<leader>as` | Send selection to Claude (visual) |
-| `<leader>aa` | Accept diff |
-| `<leader>ad` | Deny diff |
 
 ---
 
@@ -209,6 +206,8 @@ dotfiles/
 ├── gitui/                 # GitUI configuration
 │   ├── key_bindings.ron
 │   └── theme.ron
+├── opencode                 # OpenCode configuration
+│   └── .opencode.json
 ├── monokai-pro-palette.toml  # Monokai Pro color reference
 └── script/
     ├── install.sh         # Symlink installer
