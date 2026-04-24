@@ -33,6 +33,10 @@ else
 	-- 【Linux設定】
 	config.default_prog = { "/bin/zsh" }
 	-- config.kde_window_background_blur = true
+	config.enable_wayland = true
+	config.front_end = "WebGpu"
+	config.use_ime = true
+	config.window_decorations = "INTEGRATED_BUTTONS|RESIZE"
 end
 
 -- ============================================================
