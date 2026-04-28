@@ -20,11 +20,11 @@ if is_windows then
 	-- 【Windows設定】
 	config.default_domain = "WSL:Ubuntu-24.04"
 	config.set_environment_variables = { TERM_PROGRAM = "WezTerm" }
-	-- config.win32_system_backdrop = "Acrylic"
+	config.win32_system_backdrop = "Acrylic"
 elseif is_mac then
 	-- 【Mac設定】
 	config.default_prog = { "/bin/zsh", "-l" }
-	-- config.macos_window_background_blur = 20
+	config.macos_window_background_blur = 20
 
 	-- Mac特有のキーバインディング（OptionキーをMetaとして扱うなど）が必要ならここへ
 	config.send_composed_key_when_left_alt_is_pressed = true
@@ -32,7 +32,7 @@ elseif is_mac then
 else
 	-- 【Linux設定】
 	config.default_prog = { "/bin/zsh" }
-	-- config.kde_window_background_blur = true
+	config.kde_window_background_blur = true
 	config.enable_wayland = true
 	config.front_end = "WebGpu"
 	config.use_ime = true
@@ -112,8 +112,8 @@ config.font = wezterm.font_with_fallback({
 
 config.use_fancy_tab_bar = true
 config.hide_tab_bar_if_only_one_tab = true
--- config.window_background_opacity = 0.85
--- config.text_background_opacity = 1.0
+config.window_background_opacity = 0.85
+config.text_background_opacity = 1.0
 
 config.max_fps = 120
 
