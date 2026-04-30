@@ -12,6 +12,7 @@ Personal development environment configuration using a Monokai Pro theme through
 | [Neovim](https://neovim.io/) + [LazyVim](https://lazyvim.org/) | Editor |
 | [GitUI](https://github.com/extrawurst/gitui) | Git TUI |
 | [OpenCode](https://github.com/opencode-ai/opencode) | AI coding assistant (terminal) |
+| [Claude Code](https://claude.ai/code) | AI coding assistant (terminal) |
 
 ## Required Programs
 
@@ -42,6 +43,7 @@ The following fonts must be installed on your system:
 |---------|-------|
 | [nvm](https://github.com/nvm-sh/nvm) | Node.js version manager |
 | [OpenCode](https://github.com/opencode-ai/opencode) | Terminal-based AI coding assistant |
+| [Claude Code](https://claude.ai/code) | Terminal-based AI coding assistant |
 | git-lfs | Large file support |
 
 ---
@@ -199,6 +201,7 @@ dotfiles/
 ├── git/                   # Git configuration
 │   └── .gitconfig
 ├── nvim/                  # Neovim + LazyVim configuration
+│   ├── init.lua
 │   ├── lua/config/        # options, keymaps, autocmds, lazy bootstrap
 │   └── lua/plugins/       # plugin specs
 ├── starship/              # Starship prompt configuration
@@ -206,8 +209,16 @@ dotfiles/
 ├── gitui/                 # GitUI configuration
 │   ├── key_bindings.ron
 │   └── theme.ron
-├── opencode                 # OpenCode configuration
-│   └── .opencode.json
+├── opencode/              # OpenCode configuration
+│   ├── .opencode.json
+│   └── themes/
+│       └── monokai-pro.json
+├── claude/                # Claude Code configuration
+│   └── settings.json
+├── agents/                # AI agent skills
+│   └── skills/
+│       ├── find-skills/
+│       └── grill-me/
 ├── monokai-pro-palette.toml  # Monokai Pro color reference
 └── script/
     ├── install.sh         # Symlink installer
