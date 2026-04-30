@@ -10,3 +10,4 @@ starship/starship.toml          -> .config/starship.toml
 gitui                           -> .config/gitui
 opencode/.opencode.json         -> .config/opencode/.opencode.json
 opencode/themes                 -> .config/opencode/themes
+agents                          -> .agents
